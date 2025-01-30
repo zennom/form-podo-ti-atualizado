@@ -8,6 +8,7 @@ class Cliente extends Model {
   public email!: string;
   public telefone!: string;
   public endereco!: string;
+  public sexo!: string;  
 }
 Cliente.init({
   id_cliente: {
@@ -35,7 +36,11 @@ Cliente.init({
   endereco: {
     type: DataTypes.STRING,
     allowNull: false
-  }
+  },
+  sexo: {
+    type: DataTypes.ENUM('Feminino', 'Masculino', 'Outro'),
+    allowNull: false,  
+  },
 }, {
   sequelize,
   tableName: 'clientes',

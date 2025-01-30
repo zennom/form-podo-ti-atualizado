@@ -7,14 +7,15 @@ export const exibirFormularioCliente = (req: Request, res: Response) => {
 
 export const cadastrarCliente = async (req: Request, res: Response) => {
   try {
-    const { nome, data_nascimento, email, telefone, endereco } = req.body;
+    const { nome, data_nascimento, email, telefone, endereco, sexo } = req.body;
 
     const novoCliente = await Cliente.create({
       nome,
       data_nascimento,
       email,
       telefone,
-      endereco
+      endereco,
+      sexo,  // Salvando o sexo
     });
 
     res.redirect(`/cadastro/unha/${novoCliente.id_cliente}`);

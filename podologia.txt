@@ -6,15 +6,15 @@ use podologia;
 
 
 CREATE TABLE clientes (
-	id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     data_nascimento DATE,
     email VARCHAR(100),
     telefone VARCHAR(20),
     endereco TEXT,
+    sexo ENUM('feminino', 'masculino', 'outro') NOT NULL, 
     data_cadastro DATE
 );
-
 CREATE TABLE unhas(
     id_unha INT AUTO_INCREMENT PRIMARY KEY,
     id_cliente INT,

@@ -1,0 +1,30 @@
+drop database podologia; 
+
+create database podologia;
+
+use podologia;
+
+
+CREATE TABLE clientes (
+	id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    data_nascimento DATE,
+    email VARCHAR(100),
+    telefone VARCHAR(20),
+    endereco TEXT,
+    data_cadastro DATE
+);
+
+CREATE TABLE unhas(
+    id_unha INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    dedo VARCHAR(50),
+    estado VARCHAR(50),
+    observacoes TEXT,
+    data_consulta DATE,
+    FOREIGN KEY (id_cliente) REFERENCES CLIENTES(id_cliente)
+);
+
+select * from clientes;
+
+select * from unhas;

@@ -1,0 +1,19 @@
+<h2>Cadastro das Unhas do Cliente</h2>
+<p>Cliente ID: {{id_cliente}}</p>
+
+<form action="/cadastro/unha" method="POST">
+  <input type="hidden" name="id_cliente" value="{{id_cliente}}" />
+
+  <label>Dedo:</label>
+  <input type="text" name="dedo" required />
+
+  <label>Estado:</label>
+  <input type="text" name="estado" required />
+
+  <label>Observações:</label>
+  <input type="text" name="observacoes" />
+
+  <button type="submit">Cadastrar Unha</button>
+</form>
+
+<a href="/cadastro/confirmacao">Finalizar</a>
